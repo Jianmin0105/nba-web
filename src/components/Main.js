@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import nba from "../nba-client";
 import Profile from "./Profile";
+import DataViewContainer from "./DataViewContainer";
 
 class Main extends Component {
     state = {
-        playerInfo: {}
+        playerInfo: {},
+        playerId: 201939
     }
     componentDidMount() {
         window.nba = nba;
@@ -21,6 +23,7 @@ class Main extends Component {
         return (
             <div className="main">
                 <Profile playerInfo={this.state.playerInfo} />
+                <DataViewContainer playerId={this.state.playerId}/>
             </div>
         );
     }
